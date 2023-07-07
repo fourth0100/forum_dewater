@@ -10,12 +10,6 @@ if(! jq) {
 var $ = jQuery || window.jQuery || $;
 
 add_dewater_banner();
-function sleep(delay) {
-  var start = (new Date()).getTime();
-  while ((new Date()).getTime() - start < delay) {
-    continue;
-  }
-}
 
 function calc_word_num(w){
     return w.replace(/<[^>]+>/g,'').replace(/\s/g,'').length;
@@ -177,7 +171,6 @@ function get_thread_floors(option) {
     for (var i in select_urls) {
         var u = select_urls[i];
         var f = get_page_floors(u);
-        sleep(2000);
         var flen = f.length;
         for (var j = 0; j < flen; j++) {
             now_id++;
